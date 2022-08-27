@@ -1,0 +1,30 @@
+<div class="container">
+    <h1 class="mb-3">Liste of users</h1>
+
+    <a class = "btn btn-sucess"[routerLink]="['/users', 'add']">Add a user</a>
+    
+
+    <table class="table" *ngIf="users && users.length > 0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th> </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let user of users">
+                <th>{{user.id}}</th>
+                <th>{{user.firstName}}</th>
+                <th>{{user.lastName}}</th>
+                <th>{{user.email}}</th>
+                <td><a [routerLink]="['/users', 'edit', user.id]">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p *ngIf="!users || users.length <= 0 ">No Employees Found</p>
+</div>

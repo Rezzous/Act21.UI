@@ -1,0 +1,22 @@
+<div class="container my-5">
+    <h1 class="mb-3">Login</h1>
+    <div class="row">
+        <div class="col-6"> 
+            <form #loginForm = "ngForm" (ngSubmit) = "login(loginForm)">
+                <div *ngIf = "invalidLogin" class="alert alert-danger">Invalid email or password</div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="credentials.email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="credentials.password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+    
+</div>
