@@ -14,7 +14,7 @@
                 </div>
                 
                 <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
-                <button type="submit" class="btn btn-primary">Register</button>
+               <a [routerLink]="['/register']"><button type="submit" class="btn btn-primary" >Register</button></a> 
             </form>
         </div>
     </div>
